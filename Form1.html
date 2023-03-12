@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: url(https://images.unsplash.com/photo-1515339760107-1952b7a08454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80;
+);
+            background-size: cover;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: rgba(207, 127, 207, 0.5);
+            padding: 28px;
+            margin: 0 28px;
+            border-radius: 10px;
+            box-shadow: inset -2px 2px 2px black;
+        }
+
+        .Form-Title {
+            font-size: 26px;
+            font-weight: 600;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 6px;
+            color: white;
+            text-shadow: 3px 5px 3px black;
+            border-bottom: solid 2px purple;
+
+        }
+
+        .Main-User-Info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .User-Input-Class:nth-child(2n) {
+            justify-content: end;
+
+        }
+
+        .User-Input-Class {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+            padding-bottom: 15px;
+
+        }
+
+        .User-Input-Class label {
+            width: 95%;
+            color: black;
+            font-weight: bold;
+            margin: 5px 0;
+
+        }
+
+        .User-Input-Class input {
+            height: 40px;
+            width: 95%;
+            border-radius: 5px;
+            outline: none;
+            border: 2px solid purple;
+            padding: 0 10px;
+        }
+
+        .genderTitle {
+            font-weight: bold;
+            border-bottom: 2px solid purple;
+
+        }
+
+        .GenderCate {
+            margin: 15px 0;
+            color: black;
+        }
+
+        .GenderCate label {
+            font-weight: bold;
+            padding: 0 20px 0 5px;
+        }
+
+        .GenderCate label,
+        .GenderCate input,
+        .submit-btn input {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            margin-top: 40px;
+        }
+
+        .submit-btn input {
+            display: block;
+            width: 600px;
+            margin-top: 10px;
+            font-size: 15px;
+            padding: 10px;
+            border: 2px solid purple;
+            border-radius: 5px;
+            background: rgba(55, 6, 55, 0.5);
+        }
+
+        .submit-btn input:hover {
+            background: rgba(182, 167, 182, 0.5);
+        }
+
+        @media(max-width:600px) {
+            .container {
+                max-width: 280px;
+            }
+        }
+
+        /* .User-Input-Class{
+            margin-bottom: 0px;
+            width: 100%;
+        }
+
+        .User-Input-Class:nth-child(2n){
+            justify-content:space-between;
+            
+             } */
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="Form-Title">Registration</h1>
+        <form id="form">
+            <div class="Main-User-Info">
+                <div class="User-Input-Class">
+                    <label for="FullName">Full Name : </label>
+                    <input type="text" id="FullName" class="box" name="FullName" placeholder="Enter your name">
+                </div>
+
+                <div class="User-Input-Class">
+                    <label for="email">Email : </label>
+                    <input type="text" id="Email" name="Email" placeholder="Enter your Email">
+                </div>
+                <div class="User-Input-Class">
+                    <label for="phoneNumber">Phone Number : </label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number">
+                </div>
+                <div class="User-Input-Class">
+                    <label for="Password">Password: </label>
+                    <input type="text" id="Password" name="Password" placeholder="Enter your Password">
+                </div>
+                <div class="User-Input-Class">
+                    <label for="ConfirmPassword"> Confirm Password : </label>
+                    <input type="text" id="ConfirmPassword" name="ConfirmPassword" placeholder="ConfirmPassword">
+                </div>
+
+            </div>
+            <div class="GenderBox">
+                <span class="genderTitle"> Gender :</span>
+                <div class="GenderCate">
+                    <input type="radio" name="gender" value="Female" id="gender">Female
+                    <input type="radio" name="gender" value="Male" checked> Male
+                    <input type="radio" name="gender" value="Other"> Other
+                    <br><br>
+                </div>
+
+            </div>
+            <input type="button" name="add" value="Submit" class="btn" onclick="addStudent();">
+            <input type="reset" name="reset" value="clear" class="btn1">
+        </form>
+
+
+    </div>
+
+
+</body>
+<div id="Main_table">
+
+    <H3>Enrolled Student Data</H3>
+    <table id="tbl" border="3">
+        <thead class="table_head">
+            <tr>
+                <th class="row">Name</th>
+                <th class="row">Email</th>
+                <th class="row">Mobile_Number</th>
+                <th class="row">password</th>
+                <th class="row"> conpassword</th>
+                <th class="row">gender</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+<script src="form1.js"></script>
+
+</body>
+
+</html>
+
+
+</html>
